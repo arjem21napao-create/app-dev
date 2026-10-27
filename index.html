@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Favorite Movies - Gusion Cosmic Edition</title>
+    <title>My Favorite Movies - Gusion Holy Blade Edition</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -11,7 +11,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -19,14 +19,15 @@
                 extend: {
                     colors: {
                         gusion: {
-                            dark: '#0a071b',
-                            deep: '#120b2e',
-                            purple: '#6b21a8',
-                            violet: '#a855f7',
-                            cyan: '#06b6d4',
-                            teal: '#14b8a6',
-                            gold: '#fbbf24',
-                            neon: '#38bdf8'
+                            bg: '#0c0e1d',
+                            coat: '#e0e6ed',
+                            silver: '#94a3b8',
+                            scarf: '#7e22ce',
+                            purple: '#9333ea',
+                            violet: '#c084fc',
+                            dagger: '#06b6d4',
+                            glow: '#38bdf8',
+                            gold: '#fbbf24'
                         }
                     },
                     fontFamily: {
@@ -40,265 +41,260 @@
     </script>
 
     <style>
-        /* Custom Cosmic & Gusion Dagger Styling */
         body {
-            background-color: #070414;
-            color: #e2e8f0;
+            background-color: #0b0d1b;
+            color: #f1f5f9;
             overflow-x: hidden;
             font-family: 'Rajdhani', sans-serif;
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(126, 34, 206, 0.25), transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.15), transparent 50%);
         }
 
-        /* Animated Glowing Dagger Gradient Border */
-        .gusion-border {
-            position: relative;
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(6, 182, 212, 0.15));
-            border: 1px solid rgba(168, 85, 247, 0.4);
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.25), inset 0 0 15px rgba(6, 182, 212, 0.15);
-            backdrop-filter: blur(12px);
+        /* Gusion Silver & Purple Armor Glassmorphism Card */
+        .gusion-armor-card {
+            background: linear-gradient(135deg, rgba(224, 230, 237, 0.12) 0%, rgba(15, 23, 42, 0.85) 100%);
+            border: 1px solid rgba(192, 132, 252, 0.35);
+            box-shadow: 0 8px 32px 0 rgba(11, 13, 27, 0.8), 
+                        inset 0 1px 1px 0 rgba(255, 255, 255, 0.3),
+                        0 0 15px rgba(126, 34, 206, 0.2);
+            backdrop-filter: blur(16px);
         }
 
-        .gusion-border:hover {
+        .gusion-armor-card:hover {
             border-color: rgba(56, 189, 248, 0.8);
-            box-shadow: 0 0 35px rgba(56, 189, 248, 0.5), inset 0 0 25px rgba(168, 85, 247, 0.3);
+            box-shadow: 0 12px 40px 0 rgba(6, 182, 212, 0.3), 
+                        inset 0 1px 2px 0 rgba(255, 255, 255, 0.5),
+                        0 0 25px rgba(56, 189, 248, 0.4);
             transform: translateY(-3px);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* Dagger Cut Corner Edges */
+        .dagger-clip {
+            clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+        }
+
         /* Neon Glow Text */
-        .text-glow-violet {
-            text-shadow: 0 0 10px rgba(168, 85, 247, 0.8), 0 0 20px rgba(168, 85, 247, 0.5);
+        .text-glow-scarf {
+            text-shadow: 0 0 12px rgba(147, 51, 234, 0.9), 0 0 25px rgba(126, 34, 206, 0.6);
         }
-        .text-glow-cyan {
-            text-shadow: 0 0 10px rgba(6, 182, 212, 0.8), 0 0 25px rgba(6, 182, 212, 0.5);
-        }
-
-        /* Blade Flare Effect */
-        .blade-accent {
-            position: relative;
-        }
-        .blade-accent::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.4), transparent);
-            transition: 0.5s;
-        }
-        .blade-accent:hover::before {
-            left: 100%;
+        .text-glow-dagger {
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.9), 0 0 20px rgba(56, 189, 248, 0.7);
         }
 
-        /* Star Sparkle Pulse Animation */
-        @keyframes pulse-star {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.3); opacity: 1; filter: drop-shadow(0 0 8px #fbbf24); }
+        /* Pulsing Stars */
+        @keyframes star-twinkle {
+            0%, 100% { transform: scale(1); opacity: 0.8; filter: drop-shadow(0 0 4px #fbbf24); }
+            50% { transform: scale(1.35); opacity: 1; filter: drop-shadow(0 0 12px #38bdf8); }
         }
-        .star-pulse {
-            animation: pulse-star 2s infinite ease-in-out;
+        .animate-star {
+            animation: star-twinkle 2.5s infinite ease-in-out;
         }
 
-        /* Floating Animation */
-        @keyframes float-gentle {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(2deg); }
+        /* Interactive Star Rating Styling */
+        .star-rating i {
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
-        .animate-float {
-            animation: float-gentle 4s infinite ease-in-out;
+        .star-rating i:hover,
+        .star-rating i.active {
+            color: #fbbf24;
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 8px #fbbf24);
+        }
+
+        /* Floating Hero Element */
+        @keyframes hero-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-hero {
+            animation: hero-float 4s infinite ease-in-out;
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #070414;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #6b21a8;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #06b6d4;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0b0d1b; }
+        ::-webkit-scrollbar-thumb { background: #7e22ce; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between relative selection:bg-purple-600 selection:text-white">
 
-    <!-- Canvas for Floating Stars and Gusion Energy Dust Particle System -->
+    <!-- Interactive Star & Magic Dagger FX Canvas -->
     <canvas id="starfield" class="fixed inset-0 pointer-events-none z-0"></canvas>
 
     <!-- Header Navigation Bar -->
-    <header class="relative z-10 w-full px-6 py-4 flex justify-between items-center border-b border-purple-900/50 bg-gusion-dark/80 backdrop-blur-md">
+    <header class="relative z-10 w-full px-6 py-4 flex justify-between items-center border-b border-purple-900/40 bg-slate-950/80 backdrop-blur-md">
         <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-cyan-400 p-0.5 shadow-lg shadow-purple-500/50">
-                <div class="w-full h-full bg-gusion-dark rounded-full flex items-center justify-center">
-                    <i class="fa-solid font-bold text-cyan-400 text-lg">⚡</i>
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-purple-700 via-slate-200 to-cyan-400 p-0.5 shadow-lg shadow-purple-900/60 dagger-clip">
+                <div class="w-full h-full bg-slate-950 flex items-center justify-center">
+                    <i class="fa-solid fa-play text-cyan-400 text-sm"></i>
                 </div>
             </div>
-            <span class="font-orbitron text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-cyan-300 to-gold">
-                GUSION // MOVIES
-            </span>
+            <div>
+                <span class="font-orbitron text-lg font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-purple-300 to-cyan-300">
+                    GUSION
+                </span>
+                <span class="text-xs font-orbitron text-cyan-400 block -mt-1 tracking-wider">HOLY BLADE ARCHIVE</span>
+            </div>
         </div>
-        <div class="flex items-center space-x-4">
-            <button id="toggleEnergy" class="px-4 py-1.5 rounded-full text-xs font-orbitron font-semibold tracking-wider border border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/20 transition-all shadow-md shadow-cyan-500/20 flex items-center space-x-2">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <span>TOGGLE BLADES</span>
-            </button>
+        <div class="flex items-center space-x-3">
+            <span class="hidden sm:inline-block px-3 py-1 rounded-full text-xs font-orbitron bg-purple-950/80 border border-purple-500/40 text-purple-300">
+                <i class="fa-solid fa-shield-halved mr-1 text-cyan-400"></i> DEFAULT SKIN ACTIVE
+            </span>
         </div>
     </header>
 
-    <!-- Main Hero & Showcase Container -->
+    <!-- Main Container -->
     <main class="relative z-10 max-w-5xl mx-auto px-4 py-8 w-full flex-grow flex flex-col items-center">
 
         <!-- Top Badge Banner -->
-        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-purple-950/60 border border-violet-500/30 text-xs font-orbitron text-violet-300 mb-6 shadow-inner animate-pulse">
-            <i class="fa-solid fa-star text-gold star-pulse"></i>
-            <span>UNANG RIPOSITORI KO 2</span>
-            <i class="fa-solid fa-star text-gold star-pulse"></i>
+        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-md bg-slate-900/90 border border-purple-500/40 text-xs font-orbitron text-purple-200 mb-6 shadow-lg shadow-purple-950/50 dagger-clip">
+            <i class="fa-solid fa-star text-gold animate-star"></i>
+            <span class="tracking-widest uppercase font-bold text-cyan-300">unang ripositori ko 2</span>
+            <i class="fa-solid fa-star text-gold animate-star"></i>
         </div>
 
         <!-- Main Title Header -->
-        <div class="text-center mb-10 relative">
-            <h1 class="text-4xl sm:text-6xl font-black font-orbitron tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-cyan-200 to-violet-400 text-glow-violet uppercase mb-2">
-                MY FAVORITE MOVIES
+        <div class="text-center mb-8 relative">
+            <h1 class="text-4xl sm:text-6xl font-black font-orbitron tracking-tight text-slate-100 text-glow-scarf uppercase mb-2">
+                my favorite movies
             </h1>
-            <div class="h-1 w-48 mx-auto bg-gradient-to-r from-transparent via-cyan-400 to-transparent rounded-full shadow-lg shadow-cyan-500/80"></div>
+            <div class="flex items-center justify-center space-x-2">
+                <div class="h-0.5 w-16 bg-gradient-to-r from-transparent to-purple-500"></div>
+                <i class="fa-solid fa-gem text-cyan-400 text-xs"></i>
+                <div class="h-0.5 w-32 bg-gradient-to-r from-purple-500 via-cyan-400 to-purple-500"></div>
+                <i class="fa-solid fa-gem text-cyan-400 text-xs"></i>
+                <div class="h-0.5 w-16 bg-gradient-to-l from-transparent to-purple-500"></div>
+            </div>
         </div>
 
         <!-- Featured Gusion + Movie Highlight Card -->
-        <div class="w-full gusion-border rounded-2xl p-6 sm:p-8 mb-10 transition-all duration-300 relative overflow-hidden">
-            <!-- Background Decorative Dagger Silhouette Glow -->
-            <div class="absolute -right-16 -top-16 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -left-16 -bottom-16 w-64 h-64 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="w-full gusion-armor-card rounded-2xl p-6 sm:p-8 mb-10 relative overflow-hidden dagger-clip">
+            <!-- Background Magic Glows -->
+            <div class="absolute -right-20 -top-20 w-80 h-80 bg-purple-700/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="flex flex-col md:flex-row items-center gap-8 relative z-10">
-                <!-- Left: Styled Movie/Gusion Visual Frame -->
-                <div class="relative w-48 h-64 sm:w-56 sm:h-72 rounded-xl overflow-hidden border-2 border-cyan-400/50 shadow-2xl shadow-purple-900/50 flex-shrink-0 animate-float">
+                <!-- Left: Gusion Image Showcase Frame Matching User Upload -->
+                <div class="relative w-56 h-72 sm:w-64 sm:h-80 rounded-xl overflow-hidden border-2 border-purple-400/50 shadow-2xl shadow-purple-950/80 flex-shrink-0 animate-hero group">
                     <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop" 
-                         alt="Cosmic Rapunzel Magic" 
-                         class="w-full h-full object-cover filter brightness-90 hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/400x600/120b2e/a855f7?text=Rapunzel+Cosmic'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gusion-dark via-transparent to-transparent"></div>
+                         alt="Gusion Rapunzel Theme" 
+                         class="w-full h-full object-cover filter brightness-95 group-hover:scale-105 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/400x600/0c0e1d/c084fc?text=Gusion+Rapunzel'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
                     
-                    <!-- Dagger Icon Overlay Badge -->
-                    <div class="absolute top-3 right-3 bg-purple-950/80 border border-gold/60 text-gold px-2.5 py-1 rounded-md text-xs font-orbitron font-bold shadow-md">
-                        <i class="fa-solid fa-crown text-xs"></i> 10/10
+                    <!-- Glowing Scarf Accent Overlay Tag -->
+                    <div class="absolute top-3 right-3 bg-purple-950/90 border border-cyan-400/80 text-cyan-300 px-2.5 py-1 rounded-md text-xs font-orbitron font-bold shadow-lg shadow-cyan-500/30">
+                        <i class="fa-solid fa-wand-magic-sparkles mr-1 text-gold"></i> TANGLED
                     </div>
 
                     <div class="absolute bottom-3 left-3 right-3 text-center">
-                        <span class="text-xs font-orbitron tracking-wider text-cyan-300 uppercase block">Gusion Approved</span>
-                        <h4 class="text-sm font-bold text-white font-quicksand">Cosmic Edition</h4>
+                        <span class="text-[10px] font-orbitron tracking-widest text-purple-300 uppercase block">HOLY BLADE FAVORITE</span>
+                        <h4 class="text-sm font-bold text-slate-100 font-orbitron">RAPUNZEL EDITION</h4>
                     </div>
                 </div>
 
                 <!-- Right: Content Information -->
                 <div class="flex-1 text-center md:text-left">
-                    <div class="inline-block px-3 py-1 bg-cyan-950/60 border border-cyan-500/40 rounded-md text-cyan-300 text-xs font-orbitron mb-3">
-                        <i class="fa-solid fa-clapperboard mr-1"></i> TOP PICK MOVIE
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 bg-purple-900/50 border border-purple-400/40 rounded-md text-purple-200 text-xs font-orbitron mb-3">
+                        <i class="fa-solid fa-compact-disc text-cyan-400"></i>
+                        <span>FEATURED MOVIE TITLE</span>
                     </div>
                     
-                    <h2 class="text-2xl sm:text-3xl font-bold font-orbitron text-cyan-200 text-glow-cyan mb-3">
+                    <h2 class="text-2xl sm:text-3xl font-black font-orbitron text-slate-100 text-glow-dagger mb-4">
                         tangole - pambading - bida = raponzil
                     </h2>
 
-                    <!-- Star Ratings Component -->
-                    <div class="flex justify-center md:justify-start items-center space-x-1 mb-4 text-gold text-lg">
-                        <i class="fa-solid fa-star star-pulse" style="animation-delay: 0s"></i>
-                        <i class="fa-solid fa-star star-pulse" style="animation-delay: 0.2s"></i>
-                        <i class="fa-solid fa-star star-pulse" style="animation-delay: 0.4s"></i>
-                        <i class="fa-solid fa-star star-pulse" style="animation-delay: 0.6s"></i>
-                        <i class="fa-solid fa-star star-pulse" style="animation-delay: 0.8s"></i>
-                        <span class="text-xs font-orbitron text-purple-300 ml-2">(5.0 Cosmic Rating)</span>
+                    <!-- Interactive Star Rating System -->
+                    <div class="mb-5">
+                        <p class="text-xs font-orbitron text-slate-400 mb-1">RATE THIS MOVIE (CLICK STARS):</p>
+                        <div id="starRating" class="star-rating flex justify-center md:justify-start items-center space-x-2 text-2xl text-slate-600">
+                            <i class="fa-solid fa-star active" data-rating="1"></i>
+                            <i class="fa-solid fa-star active" data-rating="2"></i>
+                            <i class="fa-solid fa-star active" data-rating="3"></i>
+                            <i class="fa-solid fa-star active" data-rating="4"></i>
+                            <i class="fa-solid fa-star active" data-rating="5"></i>
+                            <span id="ratingValue" class="text-xs font-orbitron text-cyan-300 ml-2">(5/5 Stars)</span>
+                        </div>
                     </div>
 
                     <!-- Custom Tagline Quote Box -->
-                    <div class="p-4 rounded-xl bg-purple-950/40 border-l-4 border-cyan-400 text-purple-200 font-quicksand text-base italic mb-6 shadow-inner">
-                        "<p class="text-lg font-medium text-purple-100">eto ang peborit ko kasi nag kaon kana lab?</p>"
+                    <div class="p-4 rounded-xl bg-slate-900/90 border-l-4 border-purple-500 text-slate-200 font-quicksand text-base mb-6 shadow-inner relative">
+                        <i class="fa-solid fa-quote-left text-purple-500/30 text-3xl absolute top-2 right-3"></i>
+                        <p class="text-lg font-semibold text-purple-100 relative z-10">
+                            "eto ang peborit ko kasi nag kaon kana lab?"
+                        </p>
                     </div>
 
-                    <!-- Gusion Quote / Flavor Text -->
-                    <div class="flex items-center space-x-3 text-xs text-gray-400 font-rajdhani">
-                        <i class="fa-solid fa-quote-left text-cyan-400 text-base"></i>
-                        <span>"The perfect combination of magic and daggers. Light up the night like thousands of glowing lanterns!" - Holy Blade</span>
+                    <!-- Gusion Default Lore Quote -->
+                    <div class="flex items-center space-x-3 text-xs text-slate-400 font-rajdhani">
+                        <div class="w-2 h-2 rounded-full bg-cyan-400 shadow-sm shadow-cyan-400"></div>
+                        <span>"No need to remember me, I am a legend." — Gusion (Holy Blade)</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Movie Showcase Grid Section -->
+        <!-- Movie Collection Cards Grid -->
         <div class="w-full mb-10">
-            <h3 class="text-lg font-orbitron font-bold text-violet-300 mb-6 flex items-center space-x-2">
-                <i class="fa-solid fa-dagger text-cyan-400"></i>
-                <span>COSMIC FAVOURITE COLLECTION</span>
-            </h3>
+            <div class="flex items-center justify-between mb-6 border-b border-purple-900/40 pb-3">
+                <h3 class="text-lg font-orbitron font-bold text-slate-200 flex items-center space-x-2">
+                    <i class="fa-solid fa-shield-cat text-cyan-400"></i>
+                    <span>MY MOVIE PLAYLIST</span>
+                </h3>
+                <span class="text-xs font-orbitron text-purple-400">3 MOVIES LOADED</span>
+            </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <!-- Movie Card 1 -->
-                <div class="gusion-border rounded-xl p-5 blade-accent transition-all">
+                <!-- Card 1 -->
+                <div class="gusion-armor-card rounded-xl p-5 relative group dagger-clip">
                     <div class="flex justify-between items-start mb-3">
-                        <span class="text-xs font-orbitron text-cyan-400 font-semibold">TANGLED (2010)</span>
-                        <div class="text-gold text-xs flex space-x-0.5">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
+                        <span class="text-[10px] font-orbitron text-cyan-400 font-bold tracking-widest">DISNEY ANIMATION</span>
+                        <span class="text-gold text-xs"><i class="fa-solid fa-star"></i> 5.0</span>
                     </div>
-                    <h4 class="font-orbitron text-base font-bold text-white mb-2">Rapunzel Magic</h4>
-                    <p class="text-sm font-quicksand text-gray-300 mb-4">
-                        Glowing magic hair reminiscent of Gusion's radiant shadow blades.
+                    <h4 class="font-orbitron text-base font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">Tangled (Rapunzel)</h4>
+                    <p class="text-sm font-quicksand text-slate-300 mb-4">
+                        Magical golden hair and floating sky lanterns matching Gusion's cosmic starlight theme.
                     </p>
-                    <div class="text-xs text-purple-300 font-orbitron flex items-center justify-between border-t border-purple-900/50 pt-3">
-                        <span>STATUS: FAVORITE</span>
-                        <i class="fa-solid fa-heart text-cyan-400"></i>
+                    <div class="text-xs text-purple-300 font-orbitron flex items-center justify-between border-t border-purple-900/40 pt-3">
+                        <span>STATUS: WATCHED</span>
+                        <i class="fa-solid fa-circle-check text-cyan-400"></i>
                     </div>
                 </div>
 
-                <!-- Movie Card 2 -->
-                <div class="gusion-border rounded-xl p-5 blade-accent transition-all">
+                <!-- Card 2 -->
+                <div class="gusion-armor-card rounded-xl p-5 relative group dagger-clip">
                     <div class="flex justify-between items-start mb-3">
-                        <span class="text-xs font-orbitron text-cyan-400 font-semibold">MLBB ANIMATION</span>
-                        <div class="text-gold text-xs flex space-x-0.5">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
+                        <span class="text-[10px] font-orbitron text-purple-400 font-bold tracking-widest">ACTION / FANTASY</span>
+                        <span class="text-gold text-xs"><i class="fa-solid fa-star"></i> 4.9</span>
                     </div>
-                    <h4 class="font-orbitron text-base font-bold text-white mb-2">Holy Blade Chronicles</h4>
-                    <p class="text-sm font-quicksand text-gray-300 mb-4">
-                        Speed, precision, and light daggers flashing through cosmic space.
+                    <h4 class="font-orbitron text-base font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">Blade of Legend</h4>
+                    <p class="text-sm font-quicksand text-slate-300 mb-4">
+                        High-speed swordplay and magic dagger strikes in a dark fantasy medieval city.
                     </p>
-                    <div class="text-xs text-purple-300 font-orbitron flex items-center justify-between border-t border-purple-900/50 pt-3">
-                        <span>SPELL: RETRIBUTION</span>
+                    <div class="text-xs text-purple-300 font-orbitron flex items-center justify-between border-t border-purple-900/40 pt-3">
+                        <span>HERO: GUSION</span>
                         <i class="fa-solid fa-bolt text-gold"></i>
                     </div>
                 </div>
 
-                <!-- Movie Card 3 -->
-                <div class="gusion-border rounded-xl p-5 blade-accent transition-all">
+                <!-- Card 3 -->
+                <div class="gusion-armor-card rounded-xl p-5 relative group dagger-clip">
                     <div class="flex justify-between items-start mb-3">
-                        <span class="text-xs font-orbitron text-cyan-400 font-semibold">STARRY NIGHT</span>
-                        <div class="text-gold text-xs flex space-x-0.5">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
+                        <span class="text-[10px] font-orbitron text-cyan-400 font-bold tracking-widest">COSMIC NIGHT</span>
+                        <span class="text-gold text-xs"><i class="fa-solid fa-star"></i> 4.8</span>
                     </div>
-                    <h4 class="font-orbitron text-base font-bold text-white mb-2">Lantern Lights</h4>
-                    <p class="text-sm font-quicksand text-gray-300 mb-4">
-                        Floating glowing stars across the night sky matching the hero aesthetic.
+                    <h4 class="font-orbitron text-base font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">Starfall Magic</h4>
+                    <p class="text-sm font-quicksand text-slate-300 mb-4">
+                        A breathtaking journey beneath twinkling constellations and glowing magic particles.
                     </p>
-                    <div class="text-xs text-purple-300 font-orbitron flex items-center justify-between border-t border-purple-900/50 pt-3">
-                        <span>THEME: COSMIC</span>
-                        <i class="fa-solid fa-sparkles text-violet-400"></i>
+                    <div class="text-xs text-purple-300 font-orbitron flex items-center justify-between border-t border-purple-900/40 pt-3">
+                        <span>THEME: STARRY</span>
+                        <i class="fa-solid fa-sparkles text-purple-400"></i>
                     </div>
                 </div>
 
@@ -308,16 +304,16 @@
     </main>
 
     <!-- Footer -->
-    <footer class="relative z-10 w-full py-6 text-center border-t border-purple-900/40 bg-gusion-dark/90 text-xs font-orbitron text-purple-300/80">
+    <footer class="relative z-10 w-full py-6 text-center border-t border-purple-900/40 bg-slate-950/90 text-xs font-orbitron text-slate-400">
         <p class="flex items-center justify-center space-x-2">
-            <span>MOBILE LEGENDS GUSION THEME</span>
+            <span class="text-purple-300">GUSION HOLY BLADE</span>
             <span>•</span>
             <span class="text-cyan-400">UNANG RIPOSITORI KO 2</span>
         </p>
-        <p class="text-gray-500 mt-1 text-[10px]">Crafted with glowing stars and holy energy daggers</p>
+        <p class="text-slate-600 mt-1 text-[10px]">Inspired by Mobile Legends Gusion default outfit & starry cosmic FX</p>
     </footer>
 
-    <!-- Interactive Sound & Star Particle Canvas Logic -->
+    <!-- Interactive Star Particle & Rating Script -->
     <script>
         // Starfield Canvas Logic
         const canvas = document.getElementById('starfield');
@@ -325,7 +321,6 @@
 
         let stars = [];
         let daggers = [];
-        let bladeModeActive = true;
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
@@ -342,11 +337,12 @@
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
                 this.size = Math.random() * 2 + 0.5;
-                this.maxSize = this.size + Math.random() * 1.5;
-                this.speed = Math.random() * 0.5 + 0.1;
+                this.speed = Math.random() * 0.4 + 0.1;
                 this.alpha = Math.random();
-                this.alphaSpeed = Math.random() * 0.02 + 0.005;
-                this.color = Math.random() > 0.4 ? '#a855f7' : (Math.random() > 0.5 ? '#06b6d4' : '#fbbf24');
+                this.alphaSpeed = Math.random() * 0.015 + 0.005;
+                // Palette: Silver coat white, Cyan daggers, Purple scarf, Gold stars
+                const colors = ['#ffffff', '#06b6d4', '#c084fc', '#fbbf24'];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
             }
 
             update() {
@@ -354,7 +350,7 @@
                 if (this.y < 0) this.y = canvas.height;
 
                 this.alpha += this.alphaSpeed;
-                if (this.alpha > 1 || this.alpha < 0.2) {
+                if (this.alpha > 1 || this.alpha < 0.15) {
                     this.alphaSpeed = -this.alphaSpeed;
                 }
             }
@@ -363,7 +359,7 @@
                 ctx.save();
                 ctx.globalAlpha = Math.abs(this.alpha);
                 ctx.fillStyle = this.color;
-                ctx.shadowBlur = 10;
+                ctx.shadowBlur = 8;
                 ctx.shadowColor = this.color;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -372,19 +368,18 @@
             }
         }
 
-        // Energy Dagger Particles
-        class EnergyDagger {
+        // Mouse Trail Magic Dagger FX
+        class DaggerParticle {
             constructor(x, y) {
                 this.x = x;
                 this.y = y;
-                this.length = Math.random() * 20 + 15;
                 this.angle = Math.random() * Math.PI * 2;
-                this.speed = Math.random() * 4 + 2;
+                this.speed = Math.random() * 3 + 1.5;
                 this.vx = Math.cos(this.angle) * this.speed;
                 this.vy = Math.sin(this.angle) * this.speed;
                 this.life = 1;
-                this.decay = Math.random() * 0.03 + 0.02;
-                this.color = Math.random() > 0.5 ? '#38bdf8' : '#a855f7';
+                this.decay = Math.random() * 0.04 + 0.02;
+                this.color = Math.random() > 0.5 ? '#06b6d4' : '#a855f7';
             }
 
             update() {
@@ -399,12 +394,11 @@
                 ctx.globalAlpha = this.life;
                 ctx.strokeStyle = this.color;
                 ctx.lineWidth = 2;
-                ctx.shadowBlur = 12;
+                ctx.shadowBlur = 10;
                 ctx.shadowColor = this.color;
-                
                 ctx.beginPath();
                 ctx.moveTo(this.x, this.y);
-                ctx.lineTo(this.x - this.vx * 3, this.y - this.vy * 3);
+                ctx.lineTo(this.x - this.vx * 4, this.y - this.vy * 4);
                 ctx.stroke();
                 ctx.restore();
             }
@@ -412,7 +406,7 @@
 
         function initStars() {
             stars = [];
-            const count = Math.floor((canvas.width * canvas.height) / 4000);
+            const count = Math.floor((canvas.width * canvas.height) / 3500);
             for (let i = 0; i < count; i++) {
                 stars.push(new Star());
             }
@@ -426,13 +420,11 @@
                 star.draw();
             });
 
-            if (bladeModeActive) {
-                for (let i = daggers.length - 1; i >= 0; i--) {
-                    daggers[i].update();
-                    daggers[i].draw();
-                    if (daggers[i].life <= 0) {
-                        daggers.splice(i, 1);
-                    }
+            for (let i = daggers.length - 1; i >= 0; i--) {
+                daggers[i].update();
+                daggers[i].draw();
+                if (daggers[i].life <= 0) {
+                    daggers.splice(i, 1);
                 }
             }
 
@@ -441,19 +433,29 @@
 
         window.addEventListener('resize', resizeCanvas);
         window.addEventListener('mousemove', (e) => {
-            if (bladeModeActive && Math.random() > 0.6) {
-                daggers.push(new EnergyDagger(e.clientX, e.clientY));
+            if (Math.random() > 0.5) {
+                daggers.push(new DaggerParticle(e.clientX, e.clientY));
             }
         });
 
-        // Toggle Blade Particles Button
-        document.getElementById('toggleEnergy').addEventListener('click', function() {
-            bladeModeActive = !bladeModeActive;
-            this.classList.toggle('border-purple-500');
-            this.classList.toggle('text-purple-300');
+        // Interactive Star Rating Logic
+        const starIcons = document.querySelectorAll('#starRating i');
+        const ratingVal = document.getElementById('ratingValue');
+
+        starIcons.forEach(star => {
+            star.addEventListener('click', () => {
+                const selected = parseInt(star.getAttribute('data-rating'));
+                starIcons.forEach((s, idx) => {
+                    if (idx < selected) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+                ratingVal.textContent = `(${selected}/5 Stars)`;
+            });
         });
 
-        // Initialize Canvas on Load
         window.onload = function() {
             resizeCanvas();
             animate();
